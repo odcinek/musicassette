@@ -1,19 +1,18 @@
 require 'typhoeus'
 
 class Musicassette::Stream
-
   attr_writer :chunk_size
 
-  def initialize uri
+  def initialize(uri)
     @uri = uri
     @request = Typhoeus::Request.new(@uri)
   end
 
-  def chunk_handler &block
+  def chunk_handler(&block)
     if block
       @block = block
-      @request.on_body do |chunk|
-        #puts chunk.size
+      @request.on_body do |_chunk|
+        # puts chunk.size
       end
     else
       @block
