@@ -2,7 +2,7 @@
 
 A Ruby gem for handling SHOUTcast stream data
 
-```
+```ruby
 require 'musicassette'
 
 stream = Musicassette::Stream.new("http://mp3.polskieradio.pl:8904/;.mp3")

@@ -8,4 +8,7 @@ RSpec.configure do |config|
   config.mock_with :rspec do |c|
     c.syntax = [:should, :expect]
   end
+  config.before :each do
+    Typhoeus::Expectation.clear
+  end
 end
